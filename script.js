@@ -1,37 +1,31 @@
-// const imageInput = document.getElementById('addImage');
 function uploadFile(event) {
     const file = event.target.files[0];
-    // const file = imageInput.files[0];
     const reader = new FileReader();
 
     reader.onload = function (event) {
-      const imageData = event.target.result;
-      localStorage.setItem('uploadedImage', imageData);
+      const uploadimageData = event.target.result;
+      localStorage.setItem('uploadedImage', uploadimageData);
      
 
       const updatedImage = document.getElementById('imageData');
-      updatedImage.src = imageData;
+      updatedImage.src = uploadimageData;
       updatedImage.style.display = 'block';
     };
 
     reader.readAsDataURL(file);
   }
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const auploadedImageData = localStorage.getItem('uploadedImage');
+    if (auploadedImageData) {
+      const aupdatedImage = document.getElementById('imageData');
+      aupdatedImage.src = auploadedImageData;
+      aupdatedImage.style.display = 'block';
+    }
+  });
 
-//   const uploadButton=document.getElementById('upload-btn');
 
-//   uploadButton.addEventListener('click', function() {
-//   const file = imageInput.files[0];
-//   if (file) {
-//     const preader = new FileReader();
-//     preader.onload = function(event) {
-//       const logoData = event.target.result;
-//       localStorage.setItem('storedImage', logoData);
-//       console.log('Image stored in local storage.');
-//     };
-//     reader.readAsDataURL(file);
-//   }
-// });
+  // Change product logo
 function UploadProLogo(event) {
         const productFile = event.target.files[0];
         const productReader = new FileReader();
@@ -45,6 +39,8 @@ function UploadProLogo(event) {
           const uploadPro2 = document.getElementById('product2');
           const uploadPro3 = document.getElementById('product3');
           const uploadPro4 = document.getElementById('product4');
+
+          
           uploadPro1.src = uploadedProductFile;
           uploadPro1.style.display = 'block';
           uploadPro2.src = uploadedProductFile;
@@ -60,15 +56,30 @@ function UploadProLogo(event) {
   
       window.addEventListener('DOMContentLoaded', function (){
       const fileContentpro = localStorage.getItem('uploadedproductFile');
+      console.log(fileContentpro)
         if (fileContentpro) {
+          const uploadPro1 = document.getElementById('product1');
+          const uploadPro2 = document.getElementById('product2');
+          const uploadPro3 = document.getElementById('product3');
+          const uploadPro4 = document.getElementById('product4');
+
           const uploadprodeta1 = document.getElementById('productdet1');
           const uploadprodeta2 = document.getElementById('productdet2');
           const uploadprodeta3 = document.getElementById('productdet3');
+
+          uploadPro1.src = fileContentpro;
+          uploadPro1.style.display = 'block';
+          uploadPro2.src = fileContentpro;
+          uploadPro2.style.display = 'block';
+          uploadPro3.src = fileContentpro;
+          uploadPro3.style.display = 'block';
+          uploadPro4.src = fileContentpro;
+          uploadPro4.style.display = 'block';
            
 
           uploadprodeta1.src = fileContentpro;
           uploadprodeta1.style.display = 'block';
-
+          // console.log(fileContentpro)
 
           uploadprodeta2.src = fileContentpro;
           uploadprodeta2.style.display = 'block';
