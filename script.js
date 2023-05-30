@@ -30,8 +30,8 @@ function UploadProLogo(event) {
         const productFile = event.target.files[0];
         const productReader = new FileReader();
   
-        productReader.onload = function (e) {
-          const uploadedProductFile = e.target.result;
+        productReader.onload = function (eve) {
+          const uploadedProductFile = eve.target.result;
           localStorage.setItem('uploadedproductFile', uploadedProductFile);
           
   
