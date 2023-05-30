@@ -6,6 +6,9 @@ body{
     background-color: #f2f2f2;
     overflow-x: hidden;
 }
+/* .container-fluid{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+} */
 .logos{
     max-width: 120px;
     max-height: 60px;
@@ -42,6 +45,7 @@ body{
     padding: 10px;
 }
 
+/* Product style */
 .col-lg-6{
     max-width: 275px;
 }
@@ -108,4 +112,40 @@ body{
     max-width: 53px;
     position: absolute;
     opacity: 0;
+}
+
+/* Product detail style */
+.detail-right-part{
+    padding: 20px 50px;
+    background-color: white;
+    margin: 40px 0px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+h6{
+font-weight: 500;
+}
+.size,.color{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.detail-right-part button{
+    background-color: rgb(227,170,0);
+    color: white;
+    padding: 8px 51px;
+    margin: 8px;
+    border-radius: 15px;
+    border: none;
+}
+.color button{
+    background-color: #fd9c28;
+}
+.select{
+    background-color: rgb(240, 129, 18)!important;
+    margin-top: 40px!important;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+background-color: black;
 }
