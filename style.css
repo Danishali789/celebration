@@ -4,11 +4,13 @@
 }
 body{
     background-color: #f2f2f2;
+}
+.navbar{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.main-section{
     overflow-x: hidden;
 }
-/* .container-fluid{
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-} */
 .logos{
     max-width: 120px;
     max-height: 60px;
@@ -149,3 +151,10 @@ font-weight: 500;
 .carousel-control-prev-icon,.carousel-control-next-icon{
 background-color: black;
 }
+
+@media (max-width: 766px) {
+    .left-part{
+        order: 2;
+        margin-top: 40px;
+    }
+  }

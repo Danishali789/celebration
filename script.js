@@ -18,9 +18,9 @@ function uploadFile(event) {
   document.addEventListener('DOMContentLoaded', function () {
     const auploadedImageData = localStorage.getItem('uploadedImage');
     if (auploadedImageData) {
-      const aupdatedImage = document.getElementById('imageData');
-      aupdatedImage.src = auploadedImageData;
-      aupdatedImage.style.display = 'block';
+      const aupdatedImaged = document.getElementById('imageData');
+      aupdatedImaged.src = auploadedImageData;
+      aupdatedImaged.style.display = 'block';
     }
   });
 
@@ -30,8 +30,8 @@ function UploadProLogo(event) {
         const productFile = event.target.files[0];
         const productReader = new FileReader();
   
-        productReader.onload = function (eve) {
-          const uploadedProductFile = eve.target.result;
+        productReader.onload = function (event) {
+          const uploadedProductFile = event.target.result;
           localStorage.setItem('uploadedproductFile', uploadedProductFile);
           
   
@@ -40,7 +40,6 @@ function UploadProLogo(event) {
           const uploadPro3 = document.getElementById('product3');
           const uploadPro4 = document.getElementById('product4');
 
-          
           uploadPro1.src = uploadedProductFile;
           uploadPro1.style.display = 'block';
           uploadPro2.src = uploadedProductFile;
@@ -49,45 +48,54 @@ function UploadProLogo(event) {
           uploadPro3.style.display = 'block';
           uploadPro4.src = uploadedProductFile;
           uploadPro4.style.display = 'block';
+
         };
   
         productReader.readAsDataURL(productFile);
       }
   
-      window.addEventListener('DOMContentLoaded', function (){
+      document.addEventListener('DOMContentLoaded', function (){
       const fileContentpro = localStorage.getItem('uploadedproductFile');
-      console.log(fileContentpro)
+      // console.log(fileContentpro)
         if (fileContentpro) {
-          const uploadPro1 = document.getElementById('product1');
-          const uploadPro2 = document.getElementById('product2');
-          const uploadPro3 = document.getElementById('product3');
-          const uploadPro4 = document.getElementById('product4');
+          const uploadProdet1 = document.getElementById('product1');
+          const uploadProdet2 = document.getElementById('product2');
+          const uploadProdet3 = document.getElementById('product3');
+          const uploadProdet4 = document.getElementById('product4');
 
-          const uploadprodeta1 = document.getElementById('productdet1');
-          const uploadprodeta2 = document.getElementById('productdet2');
-          const uploadprodeta3 = document.getElementById('productdet3');
-
-          uploadPro1.src = fileContentpro;
-          uploadPro1.style.display = 'block';
-          uploadPro2.src = fileContentpro;
-          uploadPro2.style.display = 'block';
-          uploadPro3.src = fileContentpro;
-          uploadPro3.style.display = 'block';
-          uploadPro4.src = fileContentpro;
-          uploadPro4.style.display = 'block';
-           
-
-          uploadprodeta1.src = fileContentpro;
-          uploadprodeta1.style.display = 'block';
-          // console.log(fileContentpro)
-
-          uploadprodeta2.src = fileContentpro;
-          uploadprodeta2.style.display = 'block';
-
-
-          uploadprodeta3.src = fileContentpro;
-          uploadprodeta3.style.display = 'block';
-
+          uploadProdet1.src = fileContentpro;
+          uploadProdet1.style.display = 'block';
+          uploadProdet2.src = fileContentpro;
+          uploadProdet2.style.display = 'block';
+          uploadProdet3.src = fileContentpro;
+          uploadProdet3.style.display = 'block';
+          uploadProdet4.src = fileContentpro;
+          uploadProdet4.style.display = 'block';
 
         }
       });
+
+      // change product detail logo
+      document.addEventListener('DOMContentLoaded', function (){
+        const fileContentprodet = localStorage.getItem('uploadedproductFile');
+          if (fileContentprodet) {
+            const uploadprodet5 = document.getElementById('productdet1');
+            const uploadprodet6 = document.getElementById('productdet2');
+            const uploadprodet7 = document.getElementById('productdet3');
+  
+  
+             
+  
+            uploadprodet5.src = fileContentprodet;
+            uploadprodet5.style.display = 'block';
+  
+            uploadprodet6.src = fileContentprodet;
+            uploadprodet6.style.display = 'block';
+  
+  
+            uploadprodet7.src = fileContentprodet;
+            uploadprodet7.style.display = 'block';
+  
+  
+          }
+        });
